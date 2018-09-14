@@ -9,7 +9,9 @@ namespace boost {
   }
 }
 namespace fc {
-  enum mode_t {
+  //liruigang20180914 contract
+  //enum mode_t {
+  enum fm_mode_t {
     read_only, 
     write_only,
     read_write
@@ -17,7 +19,9 @@ namespace fc {
 
   class file_mapping {
     public:
-      file_mapping( const char* file, mode_t );
+	  //liruigang20180914 contract
+      //file_mapping( const char* file, mode_t );
+	  file_mapping( const char* file, fm_mode_t );
       ~file_mapping();
     private:
       friend class mapped_region;
@@ -30,8 +34,11 @@ namespace fc {
 
   class mapped_region {
     public:
-      mapped_region( const file_mapping& fm, mode_t m, uint64_t start, size_t size );
-      mapped_region( const file_mapping& fm, mode_t m );
+  	  //liruigang20180914 contract
+      //mapped_region( const file_mapping& fm, mode_t m, uint64_t start, size_t size );
+      //mapped_region( const file_mapping& fm, mode_t m );
+	  mapped_region( const file_mapping& fm, fm_mode_t m, uint64_t start, size_t size );
+      mapped_region( const file_mapping& fm, fm_mode_t m );
       ~mapped_region();
       void  flush();
       void* get_address()const;
