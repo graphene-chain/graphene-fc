@@ -75,11 +75,15 @@ void throw_bad_enum_cast( const char* k, const char* e );
 
 
 #ifndef _MSC_VER
-  #define TEMPLATE template
+  //liruigang20180920 contract
+  //#define TEMPLATE template  
+  #define FC_TEMPLATE template
 #else
   // Disable warning C4482: nonstandard extention used: enum 'enum_type::enum_value' used in qualified name
   #pragma warning( disable: 4482 )
-  #define TEMPLATE
+  //liruigang20180920 contract
+  //#define TEMPLATE
+  #define FC_TEMPLATE
 #endif
 
 #define FC_REFLECT_VISIT_MEMBER( r, visitor, elem ) \
