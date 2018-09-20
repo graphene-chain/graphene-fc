@@ -416,7 +416,7 @@ ENDIF()
 
 include_directories( vendor/websocketpp )
 
-add_subdirectory(tests)
+#add_subdirectory(tests)
 
 if(WIN32)
    # add addtional import library on windows platform
