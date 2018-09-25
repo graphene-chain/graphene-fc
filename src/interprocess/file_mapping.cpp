@@ -6,7 +6,7 @@
 namespace fc {
 
 
-  file_mapping::file_mapping( const char* file, mode_t m ) :
+  file_mapping::file_mapping( const char* file, fm_mode_t m ) :  //liruigang20180925 contract
     my(file, m == read_only ? boost::interprocess::read_only : boost::interprocess::read_write )
   {}
   
@@ -14,12 +14,12 @@ namespace fc {
 
 
 
-  mapped_region::mapped_region( const file_mapping& fm, mode_t m, uint64_t start, size_t size ) :
-    my( *fm.my, m == read_only ? boost::interprocess::read_only : boost::interprocess::read_write  ,start, size) 
+  mapped_region::mapped_region( const file_mapping& fm, fm_mode_t m, uint64_t start, size_t size ) :  //liruigang20180925 contract
+    my( *fm.my, m == read_only ? boost::interprocess::read_only : boost::interprocess::read_write  ,start, size)
   {}
 
-  mapped_region::mapped_region( const file_mapping& fm, mode_t m ) :
-    my( *fm.my, m == read_only ? boost::interprocess::read_only : boost::interprocess::read_write) 
+  mapped_region::mapped_region( const file_mapping& fm, fm_mode_t m ) :  //liruigang20180925 contract
+    my( *fm.my, m == read_only ? boost::interprocess::read_only : boost::interprocess::read_write)
   {}
 
   mapped_region::~mapped_region(){}
