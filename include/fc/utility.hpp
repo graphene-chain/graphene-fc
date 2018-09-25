@@ -51,6 +51,15 @@ namespace fc {
   template<typename T>
   const T& min( const T& a, const T& b ) { return a < b ? a: b; }
 
+  //liruigang20180925 contract
+  template<typename T>
+  void deduplicate( std::vector<T>& entries ) {
+    if (entries.size() > 1) {
+      std::sort( entries.begin(), entries.end() );
+      auto itr = std::unique( entries.begin(), entries.end() );
+      entries.erase( itr, entries.end() );
+    }
+  }
 }
   // outside of namespace fc becuase of VC++ conflict with std::swap
   template<typename T>
