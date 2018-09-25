@@ -97,7 +97,9 @@ namespace fc {
   };
 
   struct unsigned_int;
-  struct variant_object;
+  //liruigang20180925 contract
+  //struct variant_object;
+  class variant_object;
   template<> struct get_typename<unsigned_int>   { static const char* name()   { return "unsigned_int";   } };
   template<> struct get_typename<variant_object>   { static const char* name()   { return "fc::variant_object";   } };
 
