@@ -1,5 +1,6 @@
 #pragma once
 #include <stdint.h>
+#include <algorithm>   //liruigang20180925 contract
 #include <new>
 #include <vector>   //liruigang20180925 contract
 
