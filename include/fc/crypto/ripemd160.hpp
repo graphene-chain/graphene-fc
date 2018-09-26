@@ -45,7 +45,9 @@ class ripemd160
         ripemd160 result();
 
       private:
-        struct      impl;
+		//liruigang20180926 contract
+		//struct      impl;
+		class      impl;
         fc::fwd<impl,96> my;
     };
 
